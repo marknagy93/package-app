@@ -1,0 +1,99 @@
+body, input, button {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-image: url('img/deliverybackground.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.admin {
+    width: 700px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    padding: 14px;
+    box-shadow: 0 1px 5px -1.5px white;
+    border-radius: 6px;
+    opacity: 0.9;
+    overflow: hidden;
+}
+
+.admin h1 {
+    margin-top: 0;
+    text-align: center;
+    letter-spacing: 3px;
+    word-spacing: 5px;
+    color: rgb(40, 152, 226);
+    text-transform: uppercase;
+    animation: fadeIn_2 3s;
+}
+
+@keyframes fadeIn_2 {
+    from { opacity: 0;}
+    to { opacity: 0.9;}
+}
+
+form {
+    width: 350px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 3s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0;}
+    to { opacity: 1;}
+}
+
+label {
+    font-size: 20px;
+    color: rgb(40, 152, 226);
+}
+
+input {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    margin-top: 4px;
+    margin-bottom: 20px;
+    outline: none;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    padding: 6px 4px;
+    transition: all 0.3s ease 0s;
+}
+
+input:focus {
+    border-color: #999;
+    box-shadow: 0 0 0 3.5px rgb(40, 152, 226);
+}
+
+button {
+    font-size: 20px;
+    margin: 4px;
+    padding: 10px 6px;
+    border: none;
+    outline: none;
+    background-color: rgb(40, 152, 226);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgb(185, 235, 255);
+    color: rgb(14, 14, 14);
+}
+
+button:focus, button:active {
+    box-shadow: 0 0 0 3.5px rgb(40, 152, 226);
+}
