@@ -27,6 +27,7 @@ const UserLogin = () => {
         .then(res => res.json())
         .then(
             (result) => {
+                // itt szerettem volna a resultot elmenteni a state-embe
                 setData(result);
                 navigate("/usersite", {state: {result}});
             }
@@ -49,6 +50,7 @@ const UserLogin = () => {
     const submitValidation = () => {
         const userValue = user;
         const passwordValue = password;
+        // valószínűleg ez a megoldás nem működik.. a célom az lett volna, amit az adminlogin-ba leírtam az input check-eknél, hogy itt már több csomagazonosítónk és jelszavunk van, szóval itt már kellenének a backendből az adatok. megpróbáltam fentebb a fetch résznél a resultot beletenni a setData-ba, és itt a data-n végezni egy map-et + már egy validációt, majd meghívni az if ágba, de nem nagyon tudtam működsére bírni...
         const datacheck = data.map(data => (data.userid === userValue && data.userpassword === passwordValue));
 
         if(userValue.length === 0) {

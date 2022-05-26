@@ -54,6 +54,7 @@ const AdminLogin = () => {
         } else if(passwordValue.length === 0) {
             setErrorMsg("Mező kitöltése kötelező!");
             setErrorHide(true);
+        // mivel csak egy futárunk van a backend-be tárolva így elég egyszerűen oldottam meg az ellenőrzést, hogy azt tartalmazza-e az input amit az if ágban megírtam. Ha több futárunk lenne, ez így már így nem tudna működni, és akkor ki kéne nyerni az adatokat a backendből.
         } else if(adminValue !== "fonixcourier") {
             setErrorMsg("Hibás adatok!");
             setErrorHide(true);
@@ -80,7 +81,7 @@ const AdminLogin = () => {
                     <FormHelperText error={errorhide}>
                         {errorMsg}
                     </FormHelperText>
-                    <button type="button" style={{padding: 10}} onClick={() => { submitValidation(); login();}}>Belépés</button>
+                    <button type="button" title="submit" style={{padding: 10}} onClick={() => { submitValidation(); login();}}>Belépés</button>
                 </form>
             </div>
     )

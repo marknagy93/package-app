@@ -127,7 +127,31 @@ const AdminSite = () => {
 
     };
     
-    // submit validáció
+    /* submit validáció -> itt gondoltam egy olyan ötletre, hogy egy email api segítségével, a userid és a password state-be mentett adatokat egy sablon email szöveggel el lehetne küldeni arra az email címre amit a futárunk megadott, és az ügyfél onnan tudná kinyerni a belépéshez szükséges adatokat:
+    
+    pl: 
+    const sendMail = () => {
+        *
+            API eléréséhez szükséges adatok
+                                                *
+
+        const mailTemplate = {
+            from: 'Package Delivery <packagedelivery@package.com>,
+            to: '{email}',
+            subject: 'Új csomagod érkezett',
+            text: '
+                Kedves Ügyfelünk!
+
+                Csomagod átadásra került. A csomagot az alábbi adatok megadásával tudod átvenni:
+                    Csomagazonosító: {userid}
+                    Jelszó: {password}
+
+                Üdvözlettel,
+                Package Delivery
+            '
+        }
+    }
+    */
     const submitValidation = () => {
         const packageValue = packages;
         const dateValue = date;
