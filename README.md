@@ -20,71 +20,71 @@ A futár az adatbázisban eltárolt felhasználónév és jelszó segítségéve
 
 Teszt kód:
 
-import  React  from  'react';
-import  Enzyme, { shallow } from  'enzyme';
-import  Adapter  from  'enzyme-adapter-react-16';
-import  Home  from  '../Home';
+import  React  from  'react';  
+import  Enzyme, { shallow } from  'enzyme';  
+import  Adapter  from  'enzyme-adapter-react-16';  
+import  Home  from  '../Home';  
 /*
-MEGJEGYZÉS:
-Nem írtam még tesztet eddig soha, az iskola tematikájába se nagyon volt benne, de igyekeztem utánajárni, hogyan tudnék elvégezni teszteket az oldalakra, így egy kis utánajárással sikerült ezeket a teszt kódokat megírnom.
-*/
+MEGJEGYZÉS:  
+Nem írtam még tesztet eddig soha, az iskola tematikájába se nagyon volt benne, de igyekeztem utánajárni, hogyan tudnék elvégezni teszteket az oldalakra, így egy kis   utánajárással sikerült ezeket a teszt kódokat megírnom.  
+*/  
 
-//Enzyme konfigurálása
-Enzyme.configure({ adapter:  new  Adapter() });
+//Enzyme konfigurálása  
+Enzyme.configure({ adapter:  new  Adapter() });  
 
-// Home div megjelenésének tesztelése
-describe('Home', () => {
-	it('should show text', () => {
-	const  wrapper = shallow(<Home  />);
-	const  text = wrapper.find('div div');
-	expect(text.text()).toBe('Belépés ügyfélkéntBelépés futárként');
-	});
-});
+// Home div megjelenésének tesztelése  
+describe('Home', () => {  
+	it('should show text', () => {  
+	const  wrapper = shallow(<Home  />);  
+	const  text = wrapper.find('div div');  
+	expect(text.text()).toBe('Belépés ügyfélkéntBelépés futárként');  
+	});  
+});  
 
 2. Adminlogin oldal megjelenésének tesztelése
 
 Teszt kód:
 
-import  React  from  'react';
-import  Enzyme, { shallow } from  'enzyme';
-import  Adapter  from  'enzyme-adapter-react-16';
-import  Adminlogin  from  '../Adminlogin';
+import  React  from  'react';  
+import  Enzyme, { shallow } from  'enzyme';  
+import  Adapter  from  'enzyme-adapter-react-16';  
+import  Adminlogin  from  '../Adminlogin';  
 
-//Enzyme konfigurálása
-Enzyme.configure({ adapter:  new  Adapter() });
+//Enzyme konfigurálása  
+Enzyme.configure({ adapter:  new  Adapter() });  
 
-// jest mock metódusa, hogy a teszt futása során ne fail-eljen el a useNavigate hook miatt.
-jest.mock('react-router-dom', () => ({
-...jest.requireActual('react-router-dom'),
-useNavigate: () => (jest.fn())
-}));
+// jest mock metódusa, hogy a teszt futása során ne fail-eljen el a useNavigate hook miatt.  
+jest.mock('react-router-dom', () => ({  
+...jest.requireActual('react-router-dom'),  
+useNavigate: () => (jest.fn())  
+}));  
 
-// Adminlogin div megjelenésének tesztelése
-describe('Adminlogin', () => {
-it('should show text', () => {
-const  wrapper = shallow(<Adminlogin  />);
-const  text = wrapper.find('div');
-expect(text.text()).toBe('Bejelentkezés: Felhasználónév: Jelszó: Belépés');
-});
-});
+// Adminlogin div megjelenésének tesztelése  
+describe('Adminlogin', () => {  
+it('should show text', () => {  
+const  wrapper = shallow(<Adminlogin  />);  
+const  text = wrapper.find('div');  
+expect(text.text()).toBe('Bejelentkezés: Felhasználónév: Jelszó: Belépés');  
+});  
+});  
 
 3. Adminsite oldal megjelenésének tesztelése
 
 Teszt kód:
 
-import  React  from  'react';
-import  Enzyme, { shallow } from  'enzyme';
-import  Adapter  from  'enzyme-adapter-react-16';
-import  AdminSite  from  '../AdminSite';
+import  React  from  'react';  
+import  Enzyme, { shallow } from  'enzyme';  
+import  Adapter  from  'enzyme-adapter-react-16';  
+import  AdminSite  from  '../AdminSite';  
 
-//Enzyme konfigurálása
-Enzyme.configure({ adapter:  new  Adapter() });
+//Enzyme konfigurálása  
+Enzyme.configure({ adapter:  new  Adapter() });  
 
-// Adminsite div megjelenésének tesztelése
-describe('AdminSite', () => {
-it('should show text', () => {
-const  wrapper = shallow(<AdminSite  />);
-const  text = wrapper.find('div');
-expect(text.text()).toBe('Csomag adatai: Csomag mérete: (S,M,L,XL,XXL)Választott Box: A -> (S,M)B -> (L,XL)C -> (XXL)Átadás dátuma: Ideje: Ügyfél adatai: Azonosító: Jelszó: Email cím: JóváhagyCsomag sikeresen átadva!Kilépés');
-});
-});
+// Adminsite div megjelenésének tesztelése  
+describe('AdminSite', () => {  
+it('should show text', () => {  
+const  wrapper = shallow(<AdminSite  />);  
+const  text = wrapper.find('div');  
+expect(text.text()).toBe('Csomag adatai: Csomag mérete: (S,M,L,XL,XXL)Választott Box: A -> (S,M)B -> (L,XL)C -> (XXL)Átadás dátuma: Ideje: Ügyfél adatai: Azonosító: Jelszó: Email cím: JóváhagyCsomag sikeresen átadva!Kilépés');  
+});  
+});  
